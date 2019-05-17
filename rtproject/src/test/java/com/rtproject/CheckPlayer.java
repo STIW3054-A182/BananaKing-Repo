@@ -9,7 +9,7 @@ public class CheckPlayer{
         String path = System.getProperty("user.dir")+"\\url.txt";
         System.out.println(path);
 
-        //C:\\Users\\HP\\eclipse-workspace\\rtproject\\resources\\url.txt
+        //C:\Users\Asus\Desktop\RTProject\rtproject\resources\chess.txt
         File file = new File(path); 
   
         BufferedReader br = new BufferedReader(new FileReader(file));

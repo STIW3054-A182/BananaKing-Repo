@@ -18,6 +18,8 @@ public class Main {
         System.out.println("7. Display a player result");*/
 
         Part1.part1Display();
+    	Part3.part3Display();
+  
 
         /*System.out.print("Please select an option:");
         option = scan.nextInt();

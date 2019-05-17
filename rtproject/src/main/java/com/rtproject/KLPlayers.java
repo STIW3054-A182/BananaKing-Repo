@@ -9,7 +9,7 @@ import org.jsoup.nodes.Element;
 
 public class KLPlayers implements Runnable {
 	List<String> link;
-	static double totalplayer;
+	static int totalplayer;
 
 	public KLPlayers(List<String> line) {
 		this.link = line;
@@ -23,7 +23,7 @@ public class KLPlayers implements Runnable {
 	@Override
 	public void run() {
 		List<String> kList = new ArrayList<String>();
-		double klplyer = 0;
+		int klplyer = 0;
 
 		for (int i = 0; i < link.size(); i++) {
 			if (validTable(link.get(i))) {
@@ -39,21 +39,18 @@ public class KLPlayers implements Runnable {
 
 					for (Element row : doc.select("table.CRs1 tr")) {
 						final String state = row.select("td:nth-of-type(7)").text();
-						final String player = row.select("td:nth-of-type(4)").text();
-						if (("KUALA LUMPUR").equals(state)) {
-							if (kList.contains(category)) {
-								double klplyers = Double.parseDouble(player.replace(",", "."));
-								klplyer = klplyer + klplyers;
-							} else {
-								klplyer = Double.parseDouble(player.replace(",", "."));
+						if (("KUALA LUMPUR").equals(state)) {	
+							klplyer++;
+							} 
+						else {
 								kList.add(category);
 							}
 						}
 
-					}
+					
 					String a = "KUALA LUMPUR";
 					String format = "| %-13s| %-8s| %-8s|\n";
-					System.out.format(format, a, klplyer, category);
+					System.out.format(format, a, category, klplyer);
 					totalplayer += klplyer;
 					klplyer = 0;
 				} catch (Exception e) {
@@ -62,9 +59,9 @@ public class KLPlayers implements Runnable {
 
 			}
 		}
-		String a = "TOTAL";
-		String format = "| %-13s| %-8s| %-8s|\n";
-		System.out.format(format, a, totalplayer, " ");
+
+	String a = "TOTAL";
+	String format = "| %-13s| %-8s| %-8d|\n";System.out.format(format," ",a,totalplayer);
 
 	}
 
@@ -81,7 +78,7 @@ public class KLPlayers implements Runnable {
 		return true;
 	}
 
-	public double getGrandTotal() {
+	public int getGrandTotal() {
 
 		return KLPlayers.totalplayer;
 	}

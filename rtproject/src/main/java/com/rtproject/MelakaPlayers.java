@@ -7,22 +7,23 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-public class KedahPlayers implements Runnable {
+public class MelakaPlayers implements Runnable {
 	List<String> link;
 	static int totalplayer;
 
-	public KedahPlayers(List<String> line) {
+	public MelakaPlayers(List<String> line) {
 		this.link = line;
 
 	}
 
-	public KedahPlayers() {
+	public MelakaPlayers() {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
 	public void run() {
 		List<String> kList = new ArrayList<String>();
-		int kedahplyer = 0;
+		int melakaplyer = 0;
 
 		for (int i = 0; i < link.size(); i++) {
 			if (validTable(link.get(i))) {
@@ -38,8 +39,8 @@ public class KedahPlayers implements Runnable {
 
 					for (Element row : doc.select("table.CRs1 tr")) {
 						final String state = row.select("td:nth-of-type(7)").text();
-						if (("KEDAH").equals(state)) {	
-								kedahplyer++;
+						if (("MELAKA").equals(state)) {	
+							melakaplyer++;
 							} 
 						else {
 								kList.add(category);
@@ -47,11 +48,11 @@ public class KedahPlayers implements Runnable {
 						}
 
 					
-					String a = "KEADH";
+					String a = "MELAKA";
 					String format = "| %-13s| %-8s| %-8s|\n";
-					System.out.format(format, a, category, kedahplyer);
-					totalplayer += kedahplyer;
-					kedahplyer = 0;
+					System.out.format(format, a, category, melakaplyer);
+					totalplayer += melakaplyer;
+					melakaplyer = 0;
 				} catch (Exception e) {
 
 				}
@@ -60,7 +61,7 @@ public class KedahPlayers implements Runnable {
 		}
 
 	String a = "TOTAL";
-	String format = "| %-13s| %-8s| %-8d|\n";System.out.format(format,"",a,totalplayer);
+	String format = "| %-13s| %-8s| %-8d|\n";System.out.format(format," ",a,totalplayer);
 
 	}
 
@@ -79,7 +80,7 @@ public class KedahPlayers implements Runnable {
 
 	public int getGrandTotal() {
 
-		return KedahPlayers.totalplayer;
+		return MelakaPlayers.totalplayer;
 	}
 
 }
