@@ -17,7 +17,7 @@ public class Main {
         System.out.println("6. Count the winning points");
         System.out.println("7. Display a player result");*/
 
-        Part1.part1Display();
+    
     	Part3.part3Display();
   
 
