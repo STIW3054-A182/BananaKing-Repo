@@ -12,20 +12,23 @@
 6.Harm Yee Wen 254857
 
 
-#Introduction
+# Introduction
 
 In this group project, our group are required to develop a real-time system by using Java Programming Language (Maven). The system in this project should be able to :
 
-Check URLs
-Count the number of players.
-Display statistics.
-Display all players from KEDAH.
-Display all Top 3 players from each category.
-Count the wining points.
-Display a player result.
+1) Check URLs
+2) Count the number of players.
+3) Display statistics.
+4) Display all players from KEDAH.
+5) Display all Top 3 players from each category.
+6) Count the wining points.
+7) Display a player result.
 
 
 
 # Table of Contents
 
-------------------------------------
+| NO     | Class |
+| ---    | ---       |
+| 1      | `         |
+| 2      | \|        |
