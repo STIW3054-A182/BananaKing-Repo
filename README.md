@@ -12,7 +12,7 @@
 6.Harm Yee Wen 254857
 
 
-Introduction
+#Introduction
 
 In this group project, our group are required to develop a real-time system by using Java Programming Language (Maven). The system in this project should be able to :
 
@@ -26,6 +26,6 @@ Display a player result.
 
 
 
-3. Table of Contents
+# Table of Contents
 
 ------------------------------------
