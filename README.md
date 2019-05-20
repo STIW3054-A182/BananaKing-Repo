@@ -24,6 +24,7 @@ In this group project, our group are required to develop a real-time system by u
 6) Count the wining points.
 7) Display a player result.
 
+Details of the group assignment: [Click here for more information](https://github.com/STIW3054-A182/BananaKing-Repo/wiki)
 
 
 # Table of Contents
